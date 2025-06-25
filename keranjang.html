@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keranjang Belanja | Your Brand</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF4B20',
+                        secondary: '#1A1A1A',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="Image/Hero.png" type="image/png" />
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <!-- Header -->
+    <header class="bg-white text-black shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-primary text-3xl font-bold">EliteMiles</a>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="hover:text-primary">Home</a></li>
+                    <li><a href="artikel.html" class="hover:text-primary">Artikel</a></li>
+                    <li><a href="produk.html" class="hover:text-primary">Produk</a></li>
+                    <li><a href="keranjang.html" class="text-primary">Keranjang</a></li>
+                    <li><a href="history.html" class="hover:text-primary flex items-center">History Pembayaran</a></li>
+                </ul>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="login.html" class="hover:text-primary">Login</a>
+                <button id="mobile-menu-button" class="md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <ul class="bg-secondary px-4 py-2">
+                <li><a href="index.html" class="block py-2 hover:text-primary">Home</a></li>
+                <li><a href="artikel.html" class="block py-2 hover:text-primary">Artikel</a></li>
+                <li><a href="produk.html" class="block py-2 hover:text-primary">Produk</a></li>
+                <li><a href="keranjang.html" class="block py-2 text-primary">Keranjang</a></li>
+                <li><a href="login.html" class="block py-2 hover:text-primary">Login</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section 
+    class="relative h-96 bg-cover bg-center flex items-center justify-center" 
+    style="
+       background-image: url('https://images.pexels.com/photos/4378124/pexels-photo-4378124.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+       "
+       
+    >
+       <!-- Overlay semi-transparan untuk meningkatkan keterbacaan teks -->
+       <div class="absolute inset-0 bg-black bg-opacity-40"></div> 
+            <div class="container mx-auto px-4 text-center relative z-10">
+                <h1 class="text-4xl font-bold mb-4 text-white">Keranjang Belanja</h1>
+                <p class="text-xl text-white">Perikssa barang ana sebelum Checkout</p>
+            </div>
+    </section>
+
+    <!-- Cart Section -->
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Cart Items -->
+                <div class="lg:w-2/3">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                        <div class="p-6">
+                            <h2 class="text-2xl font-bold mb-6">Barang dalam Keranjang (3)</h2>
+                            
+                            <!-- Cart Item 1 -->
+                            <div class="flex flex-col md:flex-row border-b border-gray-200 pb-6 mb-6">
+                                <div class="md:w-1/4 mb-4 md:mb-0">
+                                    <img src="/Image/Nike Vaporfly 3 2.png" alt="Smartphone X Pro" class="w-full h-auto rounded-lg">
+                                </div>
+                                <div class="md:w-3/4 md:pl-6 flex flex-col">
+                                    <div class="flex justify-between mb-2">
+                                        <h3 class="text-lg font-semibold">Nike Vaporfly 3</h3>
+                                        <button class="text-gray-500 hover:text-red-500">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <p class="text-gray-500 mb-2">Warna: Putih Ukuran: 41</p>
+                                    <div class="flex items-center mb-4">
+                                        <span class="text-gray-600 mr-2">Jumlah:</span>
+                                        <div class="flex items-center">
+                                            <button class="w-8 h-8 bg-gray-200 rounded-l-md flex items-center justify-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                                    <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+                                                </svg>
+                                            </button>
+                                            <input type="number" value="1" min="1" class="w-12 h-8 border-y border-gray-300 text-center">
+                                            <button class="w-8 h-8 bg-gray-200 rounded-r-md flex items-center justify-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                                    <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="mt-auto flex justify-between items-center">
+                                        <span class="text-gray-500">Rp 3.599.000 / item</span>
+                                        <span class="text-xl font-bold">Rp 3.599.000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Cart Item 2 -->
+                            <div class="flex flex-col md:flex-row border-b border-gray-200 pb-6 mb-6">
+                                <div class="md:w-1/4 mb-4 md:mb-0">
+                                    <img src="/Image/Nike Zoom Fly 6.png" alt="Nike Zoom Fly 6" class="w-full h-auto rounded-lg">
+                                </div>
+                                <div class="md:w-3/4 md:pl-6 flex flex-col">
+                                    <div class="flex justify-between mb-2">
+                                        <h3 class="text-lg font-semibold">Nike Zoom Fly 6</h3>
+                                        <button class="text-gray-500 hover:text-red-500">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <p class="text-gray-500 mb-2">Warna: Hitam & Putih Ukuran: 41</p>
+                                    <div class="flex items-center mb-4">
+                                        <span class="text-gray-600 mr-2">Jumlah:</span>
+                                        <div class="flex items-center">
+                                            <button class="w-8 h-8 bg-gray-200 rounded-l-md flex items-center justify-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                                    <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+                                                </svg>
+                                            </button>
+                                            <input type="number" value="1" min="1" class="w-12 h-8 border-y border-gray-300 text-center">
+                                            <button class="w-8 h-8 bg-gray-200 rounded-r-md flex items-center justify-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                                    <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="mt-auto flex justify-between items-center">
+                                        <span class="text-gray-500">Rp 2.849.000 / item</span>
+                                        <span class="text-xl font-bold">Rp 2.849.000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Cart Item 3 -->
+                            <div class="flex flex-col md:flex-row">
+                                <div class="md:w-1/4 mb-4 md:mb-0">
+                                    <img src="/Image/Nike Alphafly 3.png" alt="Nike Alphafly 3" class="w-full h-auto rounded-lg">
+                                </div>
+                                <div class="md:w-3/4 md:pl-6 flex flex-col">
+                                    <div class="flex justify-between mb-2">
+                                        <h3 class="text-lg font-semibold">Nike Alphafly 3</h3>
+                                        <button class="text-gray-500 hover:text-red-500">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <p class="text-gray-500 mb-2">Warna: Putih, Ukuran: 41</p>
+                                    <div class="flex items-center mb-4">
+                                        <span class="text-gray-600 mr-2">Jumlah:</span>
+                                        <div class="flex items-center">
+                                            <button class="w-8 h-8 bg-gray-200 rounded-l-md flex items-center justify-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                                    <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+                                                </svg>
+                                            </button>
+                                            <input type="number" value="2" min="1" class="w-12 h-8 border-y border-gray-300 text-center">
+                                            <button class="w-8 h-8 bg-gray-200 rounded-r-md flex items-center justify-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                                    <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="mt-auto flex justify-between items-center">
+                                        <span class="text-gray-500">Rp 4.089.000 / item</span>
+                                        <span class="text-xl font-bold">Rp 4.089.000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Continue Shopping -->
+                    <div class="flex justify-between items-center">
+                        <a href="produk.html" class="flex items-center text-primary hover:underline">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+                            </svg>
+                            Lanjutkan Belanja
+                        </a>
+                        <button class="text-red-500 hover:text-red-700 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                            </svg>
+                            Kosongkan Keranjang
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Order Summary -->
+                <div class="lg:w-1/3">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden sticky top-6">
+                        <div class="p-6">
+                            <h2 class="text-2xl font-bold mb-6">Ringkasan Pesanan</h2>
+                            
+                            <!-- Summary Items -->
+                            <div class="space-y-4 mb-6">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Subtotal (3 items)</span>
+                                    <span class="font-medium">Rp10.537.000</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Diskon</span>
+                                    <span class="font-medium text-green-600">- Rp 500.000</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Biaya Pengiriman</span>
+                                    <span class="font-medium">Rp 20.000</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Pajak (10%)</span>
+                                    <span class="font-medium">Rp 1.021.600</span>
+                                </div>
+                                <div class="border-t border-gray-200 pt-4 flex justify-between">
+                                    <span class="text-lg font-bold">Total</span>
+                                    <span class="text-lg font-bold text-primary">Rp11.078.600</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Promo Code -->
+                            <div class="mb-6">
+                                <label for="promo-code" class="block text-gray-700 font-medium mb-2">Kode Promo</label>
+                                <div class="flex">
+                                    <input type="text" id="promo-code" placeholder="Masukkan kode promo" class="flex-1 px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-primary">
+                                    <button class="bg-primary hover:bg-orange-700 text-white px-4 py-2 rounded-r-md">Terapkan</button>
+                                </div>
+                            </div>
+                            
+                            <!-- Checkout Button -->
+                            <a href="pembayaran.html" class="block w-full bg-primary hover:bg-orange-700 text-white text-center py-3 rounded-md font-medium">Lanjutkan ke Pembayaran</a>
+                            
+                            <!-- Secure Checkout -->
+                            <div class="mt-6 flex items-center justify-center text-gray-500 text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                </svg>
+                                Pembayaran Aman & Terenkripsi
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+     <!-- Footer -->
+     <footer class="bg-white text-black py-10">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">EliteMiles</h3>
+                    <p class="mb-4"> adalah destinasi terbaik untuk kamu yang ingin melangkah lebih jauh.
+                        Kami menghadirkan sepatu lari Nike original pilihan, untuk performa maksimal di setiap kilometer.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/hfdz24_?igsh=dnFmanMxeThva2t2" class="hover:text-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="hover:text-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-primary">Home</a></li>
+                        <li><a href="dashboard.html" class="hover:text-primary">Dashboard</a></li>
+                        <li><a href="artikel.html" class="hover:text-primary">Articles</a></li>
+                        <li><a href="produk.html" class="hover:text-primary">Products</a></li>
+                        <li><a href="keranjang.html" class="hover:text-primary">Cart</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <span>Bratang Street, Surabaya, Indonesia</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <span>maaher024@gmail.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            <span>082334785186</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p>&copy; 2025 EliteMiles. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

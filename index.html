@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | EliteMiles</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#FF4B20",
+              secondary: "#1A1A1A",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link rel="icon" href="Image/Hero.png" type="image/png" />
+    <link rel="stylesheet" href="css/ecommers.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body class="bg-gray-100 text-gray-900">
+    <!-- Header -->
+    <header class="bg-white text-black shadow-md">
+      <div
+        class="container mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <a href="index.html" class="text-primary text-3xl font-bold"
+          >EliteMiles</a
+        >
+        <nav class="hidden md:block">
+          <ul class="flex space-x-6">
+            <li><a href="index.html" class="hover:text-primary">Home</a></li>
+            <li>
+              <a href="artikel.html" class="hover:text-primary">Artikel</a>
+            </li>
+            <li><a href="produk.html" class="hover:text-primary">Produk</a></li>
+            <li>
+              <a href="keranjang.html" class="hover:text-primary">Keranjang</a>
+            </li>
+            <li>
+              <a
+                href="history.html"
+                class="hover:text-primary flex items-center"
+                >History Pembayaran</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div class="flex items-center space-x-4">
+          <a href="login.html" class="hover:text-primary">Login</a>
+          <a href="dashboard.html" class="hover:text-primary"
+            ><i class="fa-solid fa-user-tie"></i
+          ></a>
+          <button id="mobile-menu-button" class="md:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden">
+        <ul class="bg-secondary px-4 py-2 bg-white text-black">
+          <li>
+            <a href="index.html" class="block py-2 hover:text-primary">Home</a>
+          </li>
+          <li>
+            <a href="artikel.html" class="block py-2 hover:text-primary"
+              >Artikel</a
+            >
+          </li>
+          <li>
+            <a href="produk.html" class="block py-2 hover:text-primary"
+              >Produk</a
+            >
+          </li>
+          <li>
+            <a href="keranjang.html" class="block py-2 hover:text-primary"
+              >Keranjang</a
+            >
+          </li>
+          <li>
+            <a href="login.html" class="block py-2 hover:text-primary">Login</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      class="relative bg-cover bg-center text-white py-16 md:py-20"
+      style="
+        background-image: url('https://images.pexels.com/photos/5908249/pexels-photo-5908249.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+      "
+    >
+      <div class="absolute inset-0 bg-black opacity-30"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="w-full md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+            <h1
+              class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 text-white drop-shadow-lg"
+            >
+              Welcome to
+              <span class="text-primary animate-pulse">EliteMiles</span>
+            </h1>
+            <p class="text-base sm:text-lg md:text-xl mb-8 drop-shadow">
+              <span id="typing-text"></span>
+              <span id="typing-cursor" class="animate-pulse">|</span>
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a
+                href="produk.html"
+                class="bg-gradient-to-r from-primary to-orange-500 hover:from-orange-700 hover:to-primary text-white px-6 py-3 rounded-md font-medium shadow-lg transform hover:scale-105 transition-all duration-300 animate-bounce text-center"
+                >Shop Now</a
+              >
+              <a
+                href="artikel.html"
+                class="border border-white hover:border-primary hover:text-primary px-6 py-3 rounded-md font-medium bg-white/10 backdrop-blur-md shadow hover:bg-white/30 transition text-center"
+                >Read Articles</a
+              >
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 flex justify-center" data-aos="fade-left">
+            <img
+              src="/Image/Hero.png"
+              alt="Hero Image"
+              class="rounded-lg w-60 sm:w-80 md:w-full max-w-sm animate-float"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="py-12 md:py-16">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-2xl sm:text-3xl font-bold mb-8 md:mb-10 text-center"
+          data-aos="fade-up"
+        >
+          Featured Products
+        </h2>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
+        >
+          <!-- Product Card 1 -->
+          <div
+            class="bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-105 hover:shadow-2xl transition-all duration-300"
+            data-aos="zoom-in"
+          >
+            <img
+              src="/Image/Nike Vomero 18 SE.png"
+              alt="Product 1"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">Nike Vomero 18</h3>
+              <p class="text-gray-600 mb-4">Men's Road Running Shoes</p>
+              <div class="flex justify-between items-center">
+                <span class="text-primary font-bold">Rp 2.499.000</span>
+                <a
+                  href="detail-produk.html"
+                  class="bg-primary text-white px-4 py-2 rounded hover:bg-orange-700 shadow transition"
+                  >View</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Card 2 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden"
+            data-aos="zoom-in"
+          >
+            <img
+              src="/Image/Nike Vomero 18.png"
+              alt="Product 2"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">Nike Vomero 18</h3>
+              <p class="text-gray-600 mb-4">Men's Road Running Shoes</p>
+              <div class="flex justify-between items-center">
+                <span class="text-primary font-bold">Rp 2.249.000</span>
+                <a
+                  href="detail-produk.html"
+                  class="bg-primary text-white px-4 py-2 rounded hover:bg-orange-700"
+                  >View</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Card 3 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden"
+            data-aos="zoom-in"
+          >
+            <img
+              src="/Image/Nike Vaporfly 2.png"
+              alt="Product 3"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">Nike Vomero 18</h3>
+              <p class="text-gray-600 mb-4">Men's Road Running Shoes</p>
+              <div class="flex justify-between items-center">
+                <span class="text-primary font-bold">Rp 2.249.000</span>
+                <a
+                  href="detail-produk.html"
+                  class="bg-primary text-white px-4 py-2 rounded hover:bg-orange-700"
+                  >View</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Card 4 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden"
+            data-aos="zoom-in"
+          >
+            <img
+              src="/Image/Nike Vomero 18 3.png"
+              alt="Product 4"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">Nike Vomero 18</h3>
+              <p class="text-gray-600 mb-4">Men's Road Running Shoes</p>
+              <div class="flex justify-between items-center">
+                <span class="text-primary font-bold">Rp 2.249.000</span>
+                <a
+                  href="detail-produk.html"
+                  class="bg-primary text-white px-4 py-2 rounded hover:bg-orange-700"
+                  >View</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-8 md:mt-10" data-aos="fade-up">
+          <a
+            href="produk.html"
+            class="bg-gradient-to-r from-primary to-orange-500 hover:from-orange-700 hover:to-primary text-white px-6 py-3 rounded-md font-medium shadow-lg transform hover:scale-105 transition-all duration-300"
+            >View All Products</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Latest Articles -->
+    <section class="py-12 md:py-16 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-2xl sm:text-3xl font-bold mb-8 md:mb-10 text-center"
+          data-aos="fade-up"
+        >
+          Latest Articles
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <!-- Article Card 1 -->
+          <div
+            class="bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-105 hover:shadow-2xl transition-all duration-300"
+            data-aos="fade-up"
+          >
+            <img
+              src="/Image/artikel 1.png"
+              alt="Article 1"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">Article Title</h3>
+              <p class="text-gray-500 mb-2">May 15, 2023</p>
+              <p class="text-gray-600 mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+              <a
+                href="detail-artikel.html"
+                class="text-primary font-medium hover:underline"
+                >Read More</a
+              >
+            </div>
+          </div>
+
+          <!-- Article Card 2 -->
+          <div
+            class="bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-105 hover:shadow-2xl transition-all duration-300"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <img
+              src="/Image/artikel 2.png"
+              alt="Article 2"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">Article Title</h3>
+              <p class="text-gray-500 mb-2">May 10, 2023</p>
+              <p class="text-gray-600 mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+              <a
+                href="detail-artikel.html"
+                class="text-primary font-medium hover:underline"
+                >Read More</a
+              >
+            </div>
+          </div>
+
+          <!-- Article Card 3 -->
+          <div
+            class="bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-105 hover:shadow-2xl transition-all duration-300"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <img
+              src="/Image/artikel 3.png"
+              alt="Article 3"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">Article Title</h3>
+              <p class="text-gray-500 mb-2">May 5, 2023</p>
+              <p class="text-gray-600 mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+              <a
+                href="detail-artikel.html"
+                class="text-primary font-medium hover:underline"
+                >Read More</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-8 md:mt-10" data-aos="fade-up">
+          <a
+            href="artikel.html"
+            class="bg-gradient-to-r from-primary to-orange-500 hover:from-orange-700 hover:to-primary text-white px-6 py-3 rounded-md font-medium shadow-lg transform hover:scale-105 transition-all duration-300"
+            >View All Articles</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Kenapa Pilih EliteMiles? -->
+    <section
+      class="py-12 md:py-16 bg-gradient-to-r from-primary/10 to-orange-100"
+    >
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-2xl sm:text-3xl font-bold mb-8 md:mb-10 text-center text-secondary"
+          data-aos="fade-up"
+        >
+          Kenapa Pilih EliteMiles?
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <!-- Card 1 -->
+          <div
+            class="bg-white rounded-xl shadow-xl p-8 flex flex-col items-center text-center hover:shadow-2xl transition-all duration-300"
+            data-aos="flip-left"
+          >
+            <div class="bg-primary/10 rounded-full p-4 mb-4">
+              <svg
+                class="h-10 w-10 text-primary"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 8c-1.657 0-3 1.343-3 3 0 1.657 1.343 3 3 3s3-1.343 3-3c0-1.657-1.343-3-3-3zm0 0V4m0 7v9m0 0H7m5 0h5"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Produk Original</h3>
+            <p class="text-gray-600">
+              Semua produk dijamin 100% original dan berkualitas tinggi langsung
+              dari Nike.
+            </p>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="bg-white rounded-xl shadow-xl p-8 flex flex-col items-center text-center hover:shadow-2xl transition-all duration-300"
+            data-aos="flip-up"
+            data-aos-delay="100"
+          >
+            <div class="bg-primary/10 rounded-full p-4 mb-4">
+              <svg
+                class="h-10 w-10 text-primary"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3 10h1l2 9a1 1 0 001 1h10a1 1 0 001-1l2-9h1"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M16 6a4 4 0 01-8 0"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Pengiriman Cepat</h3>
+            <p class="text-gray-600">
+              Pesanan Anda akan diproses dan dikirim dengan cepat ke seluruh
+              Indonesia.
+            </p>
+          </div>
+          <!-- Card 3 -->
+          <div
+            class="bg-white rounded-xl shadow-xl p-8 flex flex-col items-center text-center hover:shadow-2xl transition-all duration-300"
+            data-aos="flip-right"
+            data-aos-delay="200"
+          >
+            <div class="bg-primary/10 rounded-full p-4 mb-4">
+              <svg
+                class="h-10 w-10 text-primary"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17 9V7a5 5 0 00-10 0v2a2 2 0 00-2 2v7a2 2 0 002 2h10a2 2 0 002-2v-7a2 2 0 00-2-2z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 17v.01"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Pembayaran Aman</h3>
+            <p class="text-gray-600">
+              Transaksi Anda dijamin aman dengan berbagai metode pembayaran
+              terpercaya.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimoni Pelanggan -->
+    <section class="py-12 md:py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-2xl sm:text-3xl font-bold mb-8 md:mb-10 text-center text-primary"
+          data-aos="fade-up"
+        >
+          Testimoni Pelanggan
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <!-- Testimoni 1 -->
+          <div
+            class="bg-gray-50 rounded-xl shadow-lg p-8 flex flex-col items-center text-center hover:shadow-2xl transition-all duration-300"
+            data-aos="fade-up"
+          >
+            <img
+              src="https://randomuser.me/api/portraits/men/32.jpg"
+              alt="User 1"
+              class="w-20 h-20 rounded-full mb-4 border-4 border-primary/30 object-cover"
+            />
+            <h4 class="font-semibold text-lg mb-1">Rizky Maulana</h4>
+            <span class="text-primary text-sm mb-2">Runner & Pelajar</span>
+            <p class="text-gray-600 mb-2">
+              "Sepatu Nike dari EliteMiles nyaman banget dipakai lari jauh.
+              Pengiriman cepat dan packing rapi!"
+            </p>
+            <div class="flex space-x-1 text-yellow-400 mb-2">
+              <i class="fa fa-star"></i><i class="fa fa-star"></i
+              ><i class="fa fa-star"></i><i class="fa fa-star"></i
+              ><i class="fa fa-star"></i>
+            </div>
+          </div>
+          <!-- Testimoni 2 -->
+          <div
+            class="bg-gray-50 rounded-xl shadow-lg p-8 flex flex-col items-center text-center hover:shadow-2xl transition-all duration-300"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <img
+              src="https://randomuser.me/api/portraits/women/44.jpg"
+              alt="User 2"
+              class="w-20 h-20 rounded-full mb-4 border-4 border-primary/30 object-cover"
+            />
+            <h4 class="font-semibold text-lg mb-1">Siti Rahmawati</h4>
+            <span class="text-primary text-sm mb-2">Mahasiswi</span>
+            <p class="text-gray-600 mb-2">
+              "Pelayanan sangat ramah, produk original, dan harga bersaing.
+              Pasti order lagi di sini!"
+            </p>
+            <div class="flex space-x-1 text-yellow-400 mb-2">
+              <i class="fa fa-star"></i><i class="fa fa-star"></i
+              ><i class="fa fa-star"></i><i class="fa fa-star"></i
+              ><i class="fa fa-star-half-alt"></i>
+            </div>
+          </div>
+          <!-- Testimoni 3 -->
+          <div
+            class="bg-gray-50 rounded-xl shadow-lg p-8 flex flex-col items-center text-center hover:shadow-2xl transition-all duration-300"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <img
+              src="https://randomuser.me/api/portraits/men/65.jpg"
+              alt="User 3"
+              class="w-20 h-20 rounded-full mb-4 border-4 border-primary/30 object-cover"
+            />
+            <h4 class="font-semibold text-lg mb-1">Budi Santoso</h4>
+            <span class="text-primary text-sm mb-2">Pekerja Kantoran</span>
+            <p class="text-gray-600 mb-2">
+              "Transaksi aman, banyak pilihan sepatu, dan sering ada promo
+              menarik. Rekomendasi banget!"
+            </p>
+            <div class="flex space-x-1 text-yellow-400 mb-2">
+              <i class="fa fa-star"></i><i class="fa fa-star"></i
+              ><i class="fa fa-star"></i><i class="fa fa-star"></i
+              ><i class="fa fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- ...footer code tetap sama... -->
+
+    <!-- JS -->
+    <script src="js/ecommers.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+        duration: 1000,
+      });
+    </script>
+
+    <!-- Footer -->
+    <footer class="bg-white text-black py-10">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="text-xl font-bold mb-4">EliteMiles</h3>
+            <p class="mb-4">
+              adalah destinasi terbaik untuk kamu yang ingin melangkah lebih
+              jauh. Kami menghadirkan sepatu lari Nike original pilihan, untuk
+              performa maksimal di setiap kilometer.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="hover:text-primary">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+                  />
+                </svg>
+              </a>
+              <!-- Instagram -->
+              <a
+                href="https://www.instagram.com/hfdz24_?igsh=dnFmanMxeThva2t2"
+                class="hover:text-primary"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="hover:text-primary">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+              <li><a href="index.html" class="hover:text-primary">Home</a></li>
+              <li>
+                <a href="dashboard.html" class="hover:text-primary"
+                  >Dashboard</a
+                >
+              </li>
+              <li>
+                <a href="artikel.html" class="hover:text-primary">Articles</a>
+              </li>
+              <li>
+                <a href="produk.html" class="hover:text-primary">Products</a>
+              </li>
+              <li>
+                <a href="keranjang.html" class="hover:text-primary">Cart</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 mr-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+                <span>Bratang Street, Surabaya, Indonesia</span>
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 mr-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+                <span>maaher024@gmail.com</span>
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 mr-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
+                </svg>
+                <span>082334785186</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+          <p>&copy; 2025 EliteMiles. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Ganti bagian paragraf hero section dengan kode di bawah -->
+    <p class="text-xl mb-8 drop-shadow">
+      <span id="typing-text"></span>
+      <span id="typing-cursor" class="animate-pulse">|</span>
+    </p>
+
+    <!-- Tambahkan script sebelum </body> -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const text =
+          "Discover amazing products and articles curated just for you.";
+        const typingText = document.getElementById("typing-text");
+        const cursor = document.getElementById("typing-cursor");
+        let idx = 0;
+        let isDeleting = false;
+
+        function typeWriter() {
+          if (!isDeleting && idx <= text.length) {
+            typingText.textContent = text.slice(0, idx);
+            idx++;
+            setTimeout(typeWriter, 35);
+          } else if (isDeleting && idx >= 0) {
+            typingText.textContent = text.slice(0, idx);
+            idx--;
+            setTimeout(typeWriter, 20);
+          } else {
+            isDeleting = !isDeleting;
+            setTimeout(typeWriter, isDeleting ? 1000 : 500);
+          }
+        }
+
+        // Blinking cursor effect
+        const style = document.createElement("style");
+        style.innerHTML = `
+          @keyframes blink { 0%,100% { opacity: 1 } 50% { opacity: 0 } }
+          #typing-cursor { display: inline-block; }
+        `;
+        document.head.appendChild(style);
+
+        setTimeout(typeWriter, 500);
+      });
+    </script>
+  </body>
+</html>
